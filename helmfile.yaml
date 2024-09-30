@@ -1,0 +1,14 @@
+environments:
+  test:
+    kubeContext: kubernetes-nhic
+    values:
+      - values.yaml
+---
+
+releases:
+  - name: secrets
+    namespace: {{ .Values.global.namespace }}
+    chart: secrets
+    values:
+      # This merges the values listed in the environment section https://github.com/derlin/helmfile-intuitive-values-handling
+      - &env merge-values.gotmpl
