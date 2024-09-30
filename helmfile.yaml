@@ -1,6 +1,6 @@
 environments:
   test:
-    kubeContext: kubernetes-nhic
+    kubeContext: whatever-kube-context
     values:
       - values.yaml
 ---
